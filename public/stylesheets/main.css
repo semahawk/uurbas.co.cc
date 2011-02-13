@@ -1,0 +1,7 @@
+html { background: #372E1F; font-family: Val; }
+html h1 { font-size: 5.6em; font-weight: normal; color: #ef2929; }
+html h1 span { color: #0075AF; }
+html p { font-family: Ubuntu; color: #77c300; font-size: 2em; }
+
+@font-face { font-family: Val; src: url('../fonts/VAL.otf'); }
+@font-face { font-family: Ubuntu; src: url('../fonts/UbuntuTitling-Bold.ttf'); }
