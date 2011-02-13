@@ -1,0 +1,3 @@
+# What is this?
+
+This is just a project, for my homepage site, which You can find at [*here*](http://semahawk.heroku.com)
