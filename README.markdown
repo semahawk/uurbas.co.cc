@@ -1,3 +1,3 @@
-# What is this?
+# What are you, 'home' repository?
 
-This is just a project, for my homepage site, which You can find at [*here*](http://semahawk.heroku.com)
+I am just a simple project, for my owner's homepage site, which You can find at: [http://semahawk.heroku.com](http://semahawk.heroku.com)
