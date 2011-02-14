@@ -6,3 +6,5 @@ html p { font-family: Ubuntu; color: #f59000; font-size: 2em; }
 
 @font-face { font-family: Val; src: url('../fonts/VAL.otf'); }
 @font-face { font-family: Ubuntu; src: url('../fonts/UbuntuTitling-Bold.ttf'); }
+
+#dialog { text-align: center; }
