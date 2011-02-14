@@ -4,3 +4,5 @@ log/*.log
 /tmp/
 *.log
 doc/
+
+config/initializers/secret_token.rb
