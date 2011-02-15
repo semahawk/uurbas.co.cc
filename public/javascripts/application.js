@@ -66,10 +66,6 @@ var Utils = {
 			document.write('<link href="/stylesheets/' + files[i] + '.css" rel="stylesheet" type="text/css" />');
 		}
 	},
-	
-	putFirefoxNotice: function(){
-		alert(navigator.userAgent);
-	},
 };
 
 // ---------------------------------------------------------------------
@@ -105,4 +101,3 @@ var Cookie = {
 // Making source code cleaner
 var jsFiles = new Array("rails", "jquery.min");
 Utils.includeJS(jsFiles);
-Utils.putFirefoxNotice();
