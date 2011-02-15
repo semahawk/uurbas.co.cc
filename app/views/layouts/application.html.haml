@@ -6,14 +6,33 @@
 		= stylesheet_link_tag :all
 		= csrf_meta_tag
 	%body
-		.container_16
-			.grid_16{:style => "text-align: center;"}
+		.container_12
+			.grid_12{:style => "text-align: center;"}
 				%h1 Sem<span>Ah<span>awk</span></span>
-				%p Coming soon !
-				
+			.clear
+			
+			.grid_4.box
+				%p
+					%span
+						%a{:href => '/tutorials'} Tutorials
+					= image_tag('semahawk:tutorials:thumb.png')
+			.grid_4.box
+				%p
+					%span
+						%a{:href => '/articles'} Articles
+					= image_tag('semahawk:tutorials:thumb.png')
+			.grid_4.box
+				%p
+					%span
+						%a{:href => '/resources'} Resources
+					= image_tag('semahawk:tutorials:thumb.png')
+			.clear
+			
+			.grid_12
 				/[if IE]
 					%p
 						Found that site looking creepy?
 						%a{:href => 'http://www.mozilla.com/en-US/firefox/'} Get Firefox !
 						%br
 						<small><a href="http://www.flickr.com/photos/59522554@N07/5447592085/sizes/l/in/photostream/">Here</a> is how it looks under Firefox 4</small>
+			.clear
