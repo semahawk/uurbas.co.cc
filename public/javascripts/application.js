@@ -65,7 +65,22 @@ var Utils = {
 		for (var i = 0; i < files.length; i++){
 			document.write('<link href="/stylesheets/' + files[i] + '.css" rel="stylesheet" type="text/css" />');
 		}
-	}
+	},
+	
+	//
+	// name: Utils.includeCSSNonstandard
+	// @param filepath - path to CSS file
+	// @return function simply includes CSS file that is in other location than in public/stylesheets folder
+	includeCSSNonStandard: function(filepath){
+		if (is_array(filepath)){		// You can include few files at one time
+			for (var i = 0; i < filepath.length; i++){
+				document.write('<link href="' + filepath[i] + '.css" rel="stylesheet" type="text/css" />');
+			}
+		}
+		else {								// You can also include just one file
+			document.write('<link href="' + filepath + '.css" rel="stylesheet" type="text/css" />')
+		}
+	},
 };
 
 // ---------------------------------------------------------------------
@@ -103,3 +118,4 @@ var cssFiles = new Array('main', '960');
 var jsFiles = new Array("rails", "jquery.min");
 Utils.includeCSS(cssFiles);
 Utils.includeJS(jsFiles);
+Utils.includeCSSNonStandard('fonts/fonts');
