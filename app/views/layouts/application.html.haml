@@ -2,9 +2,13 @@
 %html
 	%head
 		%title Semahawk
-		= javascript_include_tag 'application'
+		= javascript_include_tag 'application', 'jquery.min', 'rails'
+		= stylesheet_link_tag :all
 		= csrf_meta_tag
 	%body
 		%div{:style => "text-align: center;"}
 			%h1 Sem<span>Ah<span>awk</span></span>
 			%p Coming soon !
+		/[if IE]
+			%a{ :href => 'http://www.mozilla.com/en-US/firefox/' }
+				%h1 What a creepy site! Get Firefox!
