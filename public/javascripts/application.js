@@ -99,9 +99,7 @@ var Cookie = {
 };
 
 // Making source code cleaner
-var cssFiles = new Array('960_16', 'whitish', 'syntaxhighlighter/shCore', 'syntaxhighlighter/shThemeSemahawk');
-var jsFiles = new Array("jquery", "rails", "syntaxhighlighter/scripts/shCore", "syntaxhighlighter/scripts/shBrushRuby", "syntaxhighlighter/scripts/shBrushPython", "syntaxhighlighter/scripts/shBrushHTML", "syntaxhighlighter/scripts/shBrushCSS", "syntaxhighlighter/scripts/shBrushJScript");
+var cssFiles = new Array('main', '960');
+var jsFiles = new Array("rails", "jquery.min");
 Utils.includeCSS(cssFiles);
 Utils.includeJS(jsFiles);
-
-document.onLoad = Utils.checkToggledDivs();
