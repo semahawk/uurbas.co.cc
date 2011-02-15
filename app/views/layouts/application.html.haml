@@ -9,6 +9,7 @@
 		%div{:style => "text-align: center;"}
 			%h1 Sem<span>Ah<span>awk</span></span>
 			%p Coming soon !
-			%p
-				Found that site looks creepy?
-				%a{ :href => 'http://www.mozilla.com/en-US/firefox/' } Get Firefox!
+			/[if IE]
+				%p
+					Found that site looking creepy?
+					%a{ :href => 'http://www.mozilla.com/en-US/firefox/' } Get Firefox!
