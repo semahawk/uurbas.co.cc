@@ -1,11 +1,21 @@
-html { background: #362A17; font-family: ValBold; }
+html { background: #362A17; font-family: UbuntuTitlingBold; }
 html a { text-decoration: none; }
-html h1 { font-size: 5.6em; font-weight: normal; color: #ef2929; }
-html h1 span { color: #0075AF; }
-html h1 span span { color: #77c300; }
+html h1 { font-family: ValBold; font-weight: normal; color: #77c300; font-size: 3.4em; text-align: center; }
 html p { font-family: UbuntuTitlingBold; color: #f59000; font-size: 2em; }
 html p a { color: #0075af; }
 html p a:hover { color: #77c300; }
+
+html ul {
+	list-style: none;
+	list-style-type: none;
+}
+
+html label { font-family: UbuntuTitlingBold; color: #0075af; }
+html input { border: 1px solid #A88249; padding: 3px; font-family: monospace; }
+
+#header h1 { font-family: ValBold; font-weight: normal; color: #ef2929; font-size: 6em; margin: 50px 0px 0px 0px; padding: 0px; }
+#header h1 span { color: #0075AF; }
+#header h1 span span { color: #77c300; }
 
 .box span { font-family: UbuntuTitlingBold; font-size: 30px; }
 .box a { color: #f59000; }

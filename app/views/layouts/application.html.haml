@@ -7,7 +7,7 @@
 		= csrf_meta_tag
 	%body
 		.container_12
-			.grid_12{:style => "text-align: center;"}
+			.grid_12#header{:style => "text-align: center;"}
 				%h1 Sem<span>Ah<span>awk</span></span>
 			.clear
 			
@@ -27,6 +27,9 @@
 						%a{:href => '/resources'} Resources
 					= image_tag('semahawk:tutorials:thumb.png')
 			.clear
+			
+			.grid_12#main
+				= yield
 			
 			.grid_12
 				/[if IE]
