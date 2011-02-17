@@ -1,3 +1,5 @@
+# My home app repository
+
 ## About
 It's just a repository, for my site, which you can find at [**http://semahawk.heroku.com**](http://semahawk.heroku.com).
 
@@ -7,3 +9,15 @@ So, as my site, is still in development mode, things here, on GitHub, **are not*
 
 ## License
 This code is **licensed under X11 (aka _MIT_) license**.
+
+# Repozytorium mojej aplikacji domowej
+
+## O repozytorium
+To jest po prostu repozytorium, dla mojej strony internetowej. Znaleźć ją można na [**http://semahawk.heroku.com**](http://semahawk.heroku.com)
+
+## Rozwój
+Jako że moja strona nie jest skończona, wszelkie zmiany robię, u siebie, lokalnie, i wrzucam je na GitHub'a.
+Więc, jako że moja strona jest w fazie rozwoju _(development)_, pliki tutaj, na GitHub'ie, **nie są** równoważne tym, na serwerze Heroku. Więc, proszę, nie zdziw się, gdy znajdziesz jakiś widok _(view)_, który powinien pojawić się na stronie, a który się nie pojawia. W związku z tym, iż strona nie jest gotowa, powinieneś zobaczyć napis  'Coming soon!' (tj. 'Wkrótce'), na mojej stronie, którą można znaleźć tutaj: [**http://semahawk.heroku.com**](http://semahawk.heroku.com).
+
+## Licencja
+Kod mojej aplikacji jest **udostępniony na licencji X11 (inaczej _MIT_)**.
