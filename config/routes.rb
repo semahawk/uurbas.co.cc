@@ -1,4 +1,6 @@
 Home::Application.routes.draw do
-	resources :articles
-	root :to => 'articles#index'
+	scope "(:locale)", :locale => /en|pl/ do
+		resources :articles
+		root :to => 'articles#index'
+	end
 end

@@ -2,7 +2,6 @@
 %html
 	%head
 		%title Semahawk
-		= javascript_include_tag 'application', 'jquery.min', 'rails'
 		= stylesheet_link_tag :all
 		= csrf_meta_tag
 	%body
@@ -11,31 +10,17 @@
 				%h1 Sem<span>Ah<span>awk</span></span>
 			.clear
 			
-			.grid_4.box
-				%p
-					%span
-						%a{:href => '/tutorials'} Tutorials
-					= image_tag('semahawk:tutorials:thumb.png')
-			.grid_4.box
-				%p
-					%span
-						%a{:href => '/articles'} Articles
-					= image_tag('semahawk:tutorials:thumb.png')
-			.grid_4.box
-				%p
-					%span
-						%a{:href => '/resources'} Resources
-					= image_tag('semahawk:tutorials:thumb.png')
-			.clear
+			.grid_12{:style => 'text-align: center;'}
+				%p= t 'sh.gen.coming_soon'
 			
-			.grid_12#main
-				= yield
-			
-			.grid_12
-				/[if IE]
+			/[if IE]
+				.grid_12{:style => 'text-align: center;'}
 					%p
-						Found that site looking creepy?
-						%a{:href => 'http://www.mozilla.com/en-US/firefox/'} Get Firefox !
+						= t 'sh.ie_note.site_creepy'
+						%a{:href => 'http://www.mozilla.com/en-US/firefox/'}= t 'sh.ie_note.get_firefox'
 						%br
-						<small><a href="http://www.flickr.com/photos/59522554@N07/5447592085/sizes/l/in/photostream/">Here</a> is how it looks under Firefox 4</small>
-			.clear
+						%small
+							%a{:href => "http://www.flickr.com/photos/59522554@N07/5447592085/sizes/l/in/photostream/"}
+								= t 'sh.ie_note.here_link'
+							= t 'sh.ie_note.looks_like_under_firefox_4'
+				.clear
