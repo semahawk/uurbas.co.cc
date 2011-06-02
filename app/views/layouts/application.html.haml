@@ -9,10 +9,22 @@
 			.grid_12#header{:style => "text-align: center;"}
 				%h1 Sem<span>Ah<span>awk</span></span>
 			.clear
-			
-			.grid_12{:style => 'text-align: center;'}
-				%p= t 'sh.gen.coming_soon'
-			
+
+			.grid_4.box
+				%p
+					%a{href: "/"} {articles}
+					= image_tag "semahawk:tutorials:thumb.png"
+			.grid_4.box
+				%p
+					%a{href: "/"} {tutorials}
+			.grid_4.box
+				%p
+					%a{href: "/"} {projects}
+			.clear
+			 
+			.grid_12#main
+				= yield
+
 			/[if IE]
 				.grid_12{:style => 'text-align: center;'}
 					%p
