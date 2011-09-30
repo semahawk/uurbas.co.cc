@@ -1,15 +1,11 @@
-%h1 Listing Articles
+- title "Listin' t'e Articles"
 
-%table
-  %tr
-    %th Title
-    %th Body
+#options &nbsp;
+#admin_options
+	= link_to 'New article', new_article_path
 
-  - @articles.each do |article|
-    %tr
-      %td= article.title
-      %td= article.body
-      %td= article.cached_slug
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+- @articles.each do |article|
+	.entry
+		%h1
+			= link_to article.title, article
+	.spacer

@@ -5,12 +5,24 @@ pl:
   # Added some code ('sh' part) for my app.
   sh:
     gen:
+      articles: 'artykuły'
+      projects: 'projekty'
+      contact: 'kontakt'
       coming_soon: 'Wkrótce !'
+      about_me: ''
+    contact:
+      contact_me: "Skontaktuj się ze mną przez:"
+    article:
+      show: 'Pokaż'
+      edit: 'Edytuj'
+      destroy: 'Usuń'
+      are_you_sure: 'Czy jesteś pewien?'
     ie_note:
       site_creepy: 'Strona wyglada okropnie?'
       get_firefox: "Uzyj Firefox'a !"
       here_link: 'Tak'
       looks_like_under_firefox_4: "oto wyglada pod Firefox'em 4"
+
   date:
     formats:
       default: "%d-%m-%Y"

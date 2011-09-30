@@ -1,38 +1,39 @@
 !!!
 %html
 	%head
-		%title Semahawk
-		= stylesheet_link_tag :all
+		%title= yield_for(:title, 'Home') + ' · Pirate Sheeps'
+		= stylesheet_link_tag 'base'
+		= javascript_include_tag 'mootools.min', 'application', 'rails'
 		= csrf_meta_tag
+		
+		:javascript
+			window.addEvent("domready", function(){
+				$$('#wrap #content .entry .content a').set('target', '_blank');
+			});
+		
+		:javascript
+			(function() {
+				var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+				t.parentNode.insertBefore(s, t);
+			})();
+	
 	%body
-		.container_12
-			.grid_12#header{:style => "text-align: center;"}
-				%h1 Sem<span>Ah<span>awk</span></span>
-			.clear
-
-			.grid_4.box
-				%p
-					%a{href: "/"} {articles}
-					= image_tag "semahawk:tutorials:thumb.png"
-			.grid_4.box
-				%p
-					%a{href: "/"} {tutorials}
-			.grid_4.box
-				%p
-					%a{href: "/"} {projects}
-			.clear
-			 
-			.grid_12#main
+		%h1#header
+			= link_to 'Pirate Sheeps!', root_url
+		#wrap
+			#sheep
+			#menu
+				= link_to t('sh.gen.articles').capitalize, articles_path
+				= link_to t('sh.gen.contact').capitalize, contact_path
+				%form{:action => "search", :method => "get", :style => "float: right; margin-top: -6px;"}
+					%input{:type => "text", :id => "search", :name => "q", :placeholder => "Searrrrch, me heartie!"}
+			
+			#content
 				= yield
-
-			/[if IE]
-				.grid_12{:style => 'text-align: center;'}
-					%p
-						= t 'sh.ie_note.site_creepy'
-						%a{:href => 'http://www.mozilla.com/en-US/firefox/'}= t 'sh.ie_note.get_firefox'
-						%br
-						%small
-							%a{:href => "http://www.flickr.com/photos/59522554@N07/5447592085/sizes/l/in/photostream/"}
-								= t 'sh.ie_note.here_link'
-							= t 'sh.ie_note.looks_like_under_firefox_4'
-				.clear
+			
+			#footer
+				Copyright &copy; 2011 by Szymon Urbaś<br />
+				This site is <a href="http://github.com/semahawk/home">open source</a>!

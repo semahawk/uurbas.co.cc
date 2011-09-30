@@ -5,7 +5,18 @@ en:
   # Added some code ('sh' part) for my app.
   sh:
     gen:
+      articles: 'articles'
+      projects: 'projects'
+      contact: 'contact'
       coming_soon: 'Coming soon !'
+      about_me: "Arrrr, me hearties! Me name be Szymon Ur(rrr)baś! Me be a %{age} yearrs-old geek, t'at lo'es <a href='http://ruby-lang.org/'>Ruby</a> prrogrammin' language!"
+    contact:
+      contact_me: "Me heartie, contact me 'ia:"
+    article:
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Remove'
+      are_you_sure: 'Are you sure?'
     ie_note:
       site_creepy: 'Found that site looking creepy?'
       get_firefox: 'Get Firefox !'

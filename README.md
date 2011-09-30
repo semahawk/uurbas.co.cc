@@ -18,6 +18,5 @@ To jest po prostu repozytorium, dla mojej strony internetowej. Znaleźć ją mo�
 ## Rozwój
 Jako że moja strona nie jest skończona, wszelkie zmiany robię, u siebie, lokalnie, i wrzucam je na GitHub'a.
 Więc, jako że moja strona jest w fazie rozwoju _(development)_, pliki tutaj, na GitHub'ie, **nie są** równoważne tym, na serwerze Heroku. Więc, proszę, nie zdziw się, gdy znajdziesz jakiś widok _(view)_, który powinien pojawić się na stronie, a który się nie pojawia. W związku z tym, iż strona nie jest gotowa, powinieneś zobaczyć napis  'Coming soon!' (tj. 'Wkrótce'), na mojej stronie, którą można znaleźć tutaj: [**http://semahawk.heroku.com**](http://semahawk.heroku.com).
-
 ## Licencja
 Kod mojej aplikacji jest **udostępniony na licencji X11 (inaczej _MIT_)**.

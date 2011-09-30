@@ -1,15 +1,74 @@
-%p#notice= notice
+- title @article.title
 
-%p
-  %b Title:
-  = @article.title
-%p
-  %b Body:
-  = @article.body
-%p
-  %b Cached slug:
-  = @article.cached_slug
+#options
+	= link_to 'Back', articles_path
+	%a{:href => "#conversation"} 2 comments
+	%a{:href => "javascript:alert(\"Well, I'll work on copying to clipbard later :)\")"}
+		Permalink
+#admin_options
+	= link_to 'Edit', edit_article_path(@article)
+	= link_to 'Destrooy', @article, :confirm => t("sh.article.are_you_sure"), :method => :delete, :style => 'background: #F66464;'
+.clear
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+.entry
+	%h1
+		= @article.title
+	.info
+		= raw "Created at #{@article.created_at} under <a href='/tag/ruby'>ruby</a>, <a href='/tag/linux'>linux</a>"
+	.content
+		= raw @article.body
+
+%h1 Share!
+#share
+	= link_to image_tag('reddit_32.png', :alt => 'Read it on Reddit!'), @article
+	= link_to image_tag('linkedin_32.png', :alt => 'Link it in Linkedin!'), @article
+	= link_to image_tag('digg_32.png', :alt => 'Digg! Uncover!'), @article
+	= link_to image_tag('readernaut_32.png', :alt => 'Readernaut!'), @article
+	= link_to image_tag('technorati_32.png', :alt => 'Technorati!'), @article
+	= link_to image_tag('sharethis_32.png', :alt => 'Share this!'), @article
+<span style="float: left; margin: 26px 0px 0px 40px;"><a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/semahawk"></a><noscript><a href="http://flattr.com/thing/294607/semahawk-on-Flattr" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript></span>
+<span style="float: left; margin: 26px 0px 0px 10px;"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Whoa! Matey, t'ats a treasurre!" data-count="horizontal" data-via="semahawk">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></span>
+.clear
+#share_tip &nbsp;
+
+#conversation
+	%h1 Join the conversation!
+	.comment
+		- require 'digest/md5'
+		- image = Digest::MD5.hexdigest 'szymon.urbas@yahoo.com'
+		= image_tag('http://gravatar.com/avatar/' + image + '?s=64', :alt => 'Szymon Urbas')
+		%div
+			= link_to 'Szymon Urbaś', @article
+			at 2011-09-29 10:02:23 UTC
+			%br
+			= link_to 'Reply', @article
+		%span For, the time was to come, when the gaunt scarecrows of that region should have watched the lamplighter, in their idleness and hunger, so long, as to conceive the idea of improving on his method, and hauling up men by those ropes and pulleys, to flare upon the darkness of their condition. But, the time was not come yet; and every wind that blew over France shook the rags of the scarecrows in vain, for the birds, fine of song and feather, took no warning.
+	.comment
+		- image = Digest::MD5.hexdigest 'szymon.urbas@yahoo.com'
+		= image_tag('http://gravatar.com/avatar/' + image + '?s=64', :alt => 'John Doe')
+		%div
+			= link_to 'John Doe', @article
+			at 2011-10-16 16:27:14 UTC
+			%br
+			= link_to 'Reply', @article
+		%span A shrill sound of laughter and of amused voices—voices of men, women, and children—resounded in the street while this wine game lasted. There was little roughness in the sport, and much playfulness.
+	#join_conversation
+		%form{:action => "#", :method => "post", :id => 'share_form'}
+			%input{:type => "text", :name => "name", :size => "17px", :style => 'float: left;', :placeholder => 'Yer name!'}
+			&nbsp;
+			%input{:type => "text", :name => "url", :size => "17px", :placeholder => "Yer website herre! (optional)"}
+			%br
+			%input{:type => "text", :name => "email", :size => "33px", :placeholder => "Mail of yerrrs!"}
+			&nbsp;
+			%input{:type => "submit", :name => "submit", :class => "submit", :value => "Join us, matey!"}
+			%textarea{:name => "comment", :cols => "49", :rows => "12", :placeholder => 'Your thoughts in herrre!'}
+
+#related_posts
+	%h1 Related posts
+	%ul
+		%li= link_to 'This was such a new idea to Alice', @article
+		%li= link_to 'The ape-things were dancing up and down urging', @article
+		%li= link_to 'I had pitched on winning ball teams.', @article
+		%li= link_to 'Perry was on his knees, praying.', @article
+		%li= link_to 'The thing\'s body was as large as that of a full-grown mastiff', @article
+.clear

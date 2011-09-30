@@ -1,6 +1,8 @@
 Home::Application.routes.draw do
 	scope "(:locale)", :locale => /en|pl/ do
 		resources :articles
-		root :to => 'articles#index'
+		match '/projects' => 'welcome#contact'
+		match '/contact' => 'welcome#contact'
+		root :to => 'welcome#index'
 	end
 end
