@@ -1,7 +1,7 @@
 !!!
 %html
 	%head
-		%title= yield_for(:title, 'Home') + ' · Pirate Sheeps'
+		%title= yield(:title) + ' · Pirate Sheeps'
 		= stylesheet_link_tag 'base'
 		= javascript_include_tag 'mootools.min', 'application', 'rails'
 		= csrf_meta_tag
