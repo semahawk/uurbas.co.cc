@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926101212) do
+ActiveRecord::Schema.define(:version => 20111001210020) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(:version => 20110926101212) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comments", :force => true do |t|
+    t.string   "author"
+    t.text     "body"
+    t.string   "website"
+    t.string   "email"
+    t.integer  "article_id"
+    t.string   "ancestry"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+  add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"

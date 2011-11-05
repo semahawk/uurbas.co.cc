@@ -1,0 +1,13 @@
+.comment
+	- image = Digest::MD5.hexdigest comment.email
+	= image_tag('http://gravatar.com/avatar/' + image + '?s=64', :alt => comment.author)
+	%div
+		= link_to comment.author, comment.website
+		at
+		= comment.created_at
+		- if comment.parent_id
+			= "as a reply to #{Comment.find(comment.parent_id).author}"
+		%br
+		= link_to 'Reply', new_article_comment_path(@article, :parent_id => comment)
+	%span
+		= comment.body
