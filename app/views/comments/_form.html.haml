@@ -1,11 +1,14 @@
+%h2 Speak your mind
+
 = form_for [@article, @article.comments.build] do |f|
-	= f.hidden_field :article_id
-	= f.hidden_field :parent_id, :value => params[:parent_id]
-	= f.text_field :author, :size => "17px", :style => 'float: left;', :placeholder => 'Yer name!'
-	&nbsp;
-	= f.text_field :website, :size => "17px", :placeholder => "Yer website herre! (optional)"
-	%br
-	= f.text_field :email, :size => "33px", :placeholder => "Mail of yerrrs!"
-	&nbsp;
-	= f.submit "Join us, matey!", :class => "submit"
-	= f.text_area :body, :cols => "49", :rows => "12", :placeholder => 'Your thoughts in herrre!'
+  = f.hidden_field :article_id
+  = f.hidden_field :parent_id, :value => params[:parent_id]
+  = f.text_field :author, :placeholder => 'Your name'
+  %br
+  = f.text_field :website, :placeholder => "Your website (optional)"
+  %br
+  = f.text_field :email, :placeholder => "Your mail"
+  %br
+  = f.text_area :body, :placeholder => 'Your thoughts'
+  %br
+  = f.submit "Go", :class => "submit"

@@ -1,5 +1,15 @@
-- title 'Shipboard'
+- title 'home'
 
 %div{:style => "text-align: center;"}
-	%h1 Arrrrr, matey!
-	%p We be still repairin' t'e ship!
+  %h1{:style => "padding: 0px;"} uurbas.co.cc
+  %p{:style => "font-style: italic;"} says hi!
+  
+  .spacer
+    
+  %ul{:style => "margin: 0px; display: block; list-style-type: none; font-size: 22px;"}
+    %li
+      = link_to 'articles', articles_path
+    %li
+      = link_to 'projects', projects_path
+    %li
+      = link_to 'contact', contact_path

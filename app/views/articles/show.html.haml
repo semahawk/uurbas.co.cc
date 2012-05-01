@@ -1,50 +1,38 @@
 - title @article.title
 
-#options
-	= link_to 'Back', articles_path
-	%a{:href => "#conversation"}
-		= @article.comments.all.size
-		comments
-	%a{:href => "javascript:alert(\"Well, I'll work on copying to clipbard later :)\")"}
-		Permalink
-#admin_options
-	= link_to 'Edit', edit_article_path(@article)
-	= link_to 'Destrooy', @article, :confirm => t("sh.article.are_you_sure"), :method => :delete, :style => 'background: #F66464;'
-.clear
-
 .entry
-	%h1
-		= @article.title
-	.info
-		= raw "Created at #{@article.created_at} under <a href='/tag/ruby'>ruby</a>, <a href='/tag/linux'>linux</a>"
-	.content
-		= markdown @article.body
+  %h1
+    = @article.title
+  .info
+    = raw "Created at #{@article.created_at} under <a href='/tag/c'>c</a>, <a href='/tag/linux'>linux</a>"
+  .content
+    = markdown @article.body
 
 #share
-	%h1#share_h Sharrr'...
-	%div
-		<a href=""><img src="/images/reddit_32.png" alt="Reddit" /></a><a href=""><img src="/images/linkedin_32.png" alt="Linkedin" /></a><a href=""><img src="/images/digg_32.png" alt="Digg" /></a><a href=""><img src="/images/readernaut_32.png" alt="Readernaut" /></a><a href=""><img src="/images/technorati_32.png" alt="Technorati" /></a><a href=""><img src="/images/sharethis_32.png" alt="Share this" /></a>
-		%br
-		%br
-		<span style="margin: 26px 0px 0px 0px;"><a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/semahawk"></a><noscript><a href="http://flattr.com/thing/294607/semahawk-on-Flattr" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript></span>
-		<span style="margin: 26px 0px 0px 10px;"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Whoa! Matey, t'ats a treasurre!" data-count="horizontal" data-via="semahawk">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></span>
+  %h1#share_h Share ...
+  %div
+    <a href=""><img src="/images/reddit_32.png" alt="Reddit" /></a><a href=""><img src="/images/linkedin_32.png" alt="Linkedin" /></a><a href=""><img src="/images/digg_32.png" alt="Digg" /></a><a href=""><img src="/images/readernaut_32.png" alt="Readernaut" /></a><a href=""><img src="/images/technorati_32.png" alt="Technorati" /></a><a href=""><img src="/images/sharethis_32.png" alt="Share this" /></a>
+    %br
+    %br
+    <span style="margin: 26px 0px 0px 0px;"><a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/semahawk"></a><noscript><a href="http://flattr.com/thing/294607/semahawk-on-Flattr" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript></span>
+    <span style="margin: 26px 0px 0px 10px;"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Whoa! Matey, t'ats a treasurre!" data-count="horizontal" data-via="semahawk">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></span>
 
 #related_posts
-	%h1 Rrrelated shouts
-	%ul
-		%li= link_to 'This was such a new idea to Alice', @article
-		%li= link_to 'The ape-things were dancing up and down urging', @article
-		%li= link_to 'I had pitched on winning ball teams.', @article
-		%li= link_to 'Perry was on his knees, praying.', @article
-		%li= link_to 'The thing\'s body was as large as that of a full-grown mastiff', @article
+  %h1 Related shouts
+  %ul
+    %li= link_to 'This was such a new idea to Alice', @article
+    %li= link_to 'The ape-things were dancing up and down urging', @article
+    %li= link_to 'I had pitched on winning ball teams.', @article
+    %li= link_to 'Perry was on his knees, praying.', @article
+    %li= link_to 'The thing\'s body was as large as that of a full-grown mastiff', @article
 .clear
 
 #conversation
-	%h1 Join t'e talking!
-	- if @article.comments.empty?
-		%p{:style => 'padding: 20px;'} It lacks o' comments, me heartie! Be t'e first one!
-	- else
-		- require 'digest/md5'
-		= nested_comments @article.comments.arrange(:order => :created_at)
+  %h1 Join the talking
+  - if @article.comments.empty?
+    %p{:style => 'padding: 20px;'} Oh, there are no comments.. Be the first one!
+  - else
+    - require 'digest/md5'
+    = nested_comments @article.comments.arrange(:order => :created_at)
 
 = render "comments/form"
