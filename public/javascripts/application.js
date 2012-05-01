@@ -33,11 +33,11 @@ window.addEvent('domready', function(){
 	/////////////////////////////////////////////////////////////////////
 	$$('#share img').addEvents({
 		mouseenter: function(e){
-			$('share_tip').set('text', $(this).get('alt')).setStyle('padding', '0px 0px 0px ' + ($(this).getOffsets().x - $('share_tip').getOffsets().x) + 'px');
+			$('share_h').set('html', 'Share on ' + $(this).get('alt') + '!');
 		},
 		
 		mouseleave: function(e){
-			$('share_tip').set('html', '&nbsp;');
+			$('share_h').set('html', 'Share ...');
 		}
 	});
 });

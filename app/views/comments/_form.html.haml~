@@ -1,0 +1,11 @@
+= form_for [@article, @article.comments.build], :remote => true do |f|
+	= f.hidden_field :article_id
+	= f.hidden_field :parent_id, :value => params[:parent_id]
+	= f.text_field :author, :size => "17px", :style => 'float: left;', :placeholder => 'Yer name!'
+	&nbsp;
+	= f.text_field :website, :size => "17px", :placeholder => "Yer website herre! (optional)"
+	%br
+	= f.text_field :email, :size => "33px", :placeholder => "Mail of yerrrs!"
+	&nbsp;
+	= f.submit "Join us, matey!", :class => "submit"
+	= f.text_area :body, :cols => "49", :rows => "12", :placeholder => 'Your thoughts in herrre!'

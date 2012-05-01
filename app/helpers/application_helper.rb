@@ -1,11 +1,10 @@
 module ApplicationHelper
-	def yield_for(content_sym, default)
-		output = content_for(content_sym)
-		output = default if output.blank?
-		output
-end
+	def markdown text
+		options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
+		Redcarpet.new(text, *options).to_html.html_safe
+	end
 	
-	def title(page_title)
-		content_for(:title) { page_title }
+	def title what
+		content_for(:title) { what }
 	end
 end
