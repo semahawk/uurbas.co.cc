@@ -25,7 +25,7 @@
     #wrap
       #content
         #header
-          <a href="/">uurbas.co.cc</a> / articles
+          = breadcrumb :pretext => "", :separator => "»", :autoroot => true, :show_root_alone => true, :link_last => false
 
         #master
           = yield

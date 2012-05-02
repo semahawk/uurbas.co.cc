@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     @articles = Article.order 'created_at ASC'
+    breadcrumb :articles, @articles
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new(:article => @article)
+    breadcrumb :article, @article
 
     respond_to do |format|
       format.html # show.html.erb

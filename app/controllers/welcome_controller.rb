@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def contact
+    breadcrumb :contact
   end
 end

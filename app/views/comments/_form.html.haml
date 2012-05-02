@@ -3,12 +3,12 @@
 = form_for [@article, @article.comments.build] do |f|
   = f.hidden_field :article_id
   = f.hidden_field :parent_id, :value => params[:parent_id]
-  = f.text_field :author, :placeholder => 'Your name'
+  = f.text_field :author, :placeholder => '* Your name', :size => 42
   %br
-  = f.text_field :website, :placeholder => "Your website (optional)"
+  = f.text_field :website, :placeholder => "  Your website", :size => 42
   %br
-  = f.text_field :email, :placeholder => "Your mail"
+  = f.text_field :email, :placeholder => "  Your mail (just for gravatar)", :size => 42
   %br
-  = f.text_area :body, :placeholder => 'Your thoughts'
+  = f.text_area :body, :placeholder => "* Your thoughts (Markdown parsed)", :cols => 41
   %br
   = f.submit "Go", :class => "submit"

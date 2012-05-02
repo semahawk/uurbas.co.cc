@@ -39,6 +39,7 @@ GEM
       abstract (>= 1.0.0)
     friendly_id (3.2.1)
       babosa (~> 0.2.1)
+    gretel (1.0.8)
     haml (3.0.25)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -92,6 +93,7 @@ DEPENDENCIES
   albino
   ancestry
   friendly_id (~> 3.1)
+  gretel
   haml (= 3.0.25)
   haml-rails
   mootools-rails (~> 0.4)
