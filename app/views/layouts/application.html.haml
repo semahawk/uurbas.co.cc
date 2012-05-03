@@ -25,7 +25,11 @@
     #wrap
       #content
         #header
-          = breadcrumb :pretext => "", :separator => "»", :autoroot => true, :show_root_alone => true, :link_last => false
+          #header_left
+            = breadcrumb :pretext => "", :separator => "»", :autoroot => true, :show_root_alone => true, :link_last => false
+          #header_right
+            beacon
+          .clear
 
         #master
           = yield

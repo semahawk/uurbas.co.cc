@@ -210,6 +210,17 @@ pre {
   #header a { color: #F25F0F; }
   #header a:hover { border-bottom: 1px dashed #e1ddda; }
 
+  #header_left {
+    float: left;
+    width: 50%;
+  }
+
+  #header_right {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+
 #index {
   text-align: center;
 }
