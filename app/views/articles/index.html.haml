@@ -2,6 +2,12 @@
 
 - @articles.each do |article|
   .entry
-    %h1= link_to article.title, article
+    %h1{:style => "float: left;"}
+      = link_to article.title, article
+    %span{:style => "float: left; margin-top: 45px; margin-left: 30px; font-size: 16px; color: #1a8bd2; font-style: italic;"}
+      = link_to "edit", edit_article_path(article)
+      &nbsp;
+      = link_to "delete", article, :confirm => "You sure?", :method => :delete
+    .clear
     %p= markdown article.body[0..400] + '...'
   .spacer
