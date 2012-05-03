@@ -1,15 +1,12 @@
 - title 'home'
 
-%div{:style => "text-align: center;"}
-  %h1{:style => "padding: 0px;"} uurbas.co.cc
-  %p{:style => "font-style: italic;"} says hi!
+#index
+  %h1 uurbas.co.cc
   
-  .spacer{:style => "margin-bottom: 20px; border-bottom: 1px dashed #e1ddda;"}
+  .spacer
     
-  %ul{:style => "margin: 0px; display: block; list-style-type: none; font-size: 22px;"}
+  %ul
     %li
       = link_to 'articles', articles_path
-    %li
-      = link_to 'projects', projects_path
     %li
       = link_to 'contact', contact_path

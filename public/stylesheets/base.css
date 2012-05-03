@@ -92,8 +92,6 @@ p {
 }
 
 hr {
-  color: none;
-  background-color: none;
   height: 1px;
   border-top: 1px dashed #e1ddda;
   border-bottom: none;
@@ -211,6 +209,20 @@ pre {
 
   #header a { color: #F25F0F; }
   #header a:hover { border-bottom: 1px dashed #e1ddda; }
+
+#index {
+  text-align: center;
+}
+
+  #index h1 { font-size: 100px; padding: 0px; }
+  #index .spacer { margin-bottom: 20px; border-bottom: 1px dashed #e1ddda; }
+  #index ul {
+    margin: 0px;
+    display: block;
+    list-style: none;
+    list-style-type: none;
+    font-size: 22px;
+  }
 
 #menu { margin-bottom: 20px; }
 
