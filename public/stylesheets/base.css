@@ -224,6 +224,15 @@ pre {
     font-size: 22px;
   }
 
+#contact {
+  list-style-type: none;
+  margin: 50px;
+}
+
+  #contact a:hover { border: none; }
+  #contact ul li a img { margin: 0; }
+  #contact img { margin: 0; }
+
 #menu { margin-bottom: 20px; }
 
   #menu a {

@@ -1,43 +1,39 @@
-window.addEvent('domready', function(){
-	var ajaxReq = new Request({
-		url: 'response.php',
-		onSuccess: function(response){
-			$('debug').set('html', response);
-		}
-	});
-	
-	$$('textarea[name=input]').addEvent('keyup', function(){
-		var value = this.get('value');
-		ajaxReq.cancel().send({
-			data: {'input' : value}
-		});
-	});
-	
-	/////////////////////////////////////////////////////////////////////
-	/// Menu buttons ////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////
-	$$('#menu a').setStyles({'background-position': '0px 40px'}).addEvents({
-		mouseenter: function(e){
-			e.stop();
-			new Fx.Tween($(this), {duration: 150, link: "cancel"}).start('background-position', '0px 160px');
-		},
-		
-		mouseleave: function(e){
-			e.stop();
-			new Fx.Tween($(this), {duration: 150, link: "cancel"}).start('background-position', '0px 40px');
-		}
-	});
-	
-	/////////////////////////////////////////////////////////////////////
-	/// Share! //////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////
-	$$('#share img').addEvents({
-		mouseenter: function(e){
-			$('share_h').set('html', 'Share on ' + $(this).get('alt') + '!');
-		},
-		
-		mouseleave: function(e){
-			$('share_h').set('html', 'Share ...');
-		}
-	});
+$(document).ready(function(){
+
+  /// Share! ///
+  $("#share img").mouseover(function(){
+    $("#share_h").html($(this).attr("alt"));
+  }).mouseout(function(){
+    $("#share_h").html("Share");
+  });
+
+  /// Contact buttons ///
+  $("ul#contact img").mouseover(function(){
+    var offset_top  = $(this).offset().top;
+    var offset_left = $(this).offset().left;
+
+    $("body").prepend("<div id='dummy' style='font-style: italic; color: #666; opacity: 0; position: fixed; top: " + (offset_top + 7) + "px; left: " + (offset_left + 40) + "px;'>" + $(this).attr("alt") + "</div>");
+
+    $("#dummy").animate({
+      opacity: 1,
+      left: '+=10'
+    }, {
+      duration: 450,
+      easing: 'easeOutBounce',
+      complete: function(){
+        // after animating
+      }
+    });
+  }).mouseout(function(){
+    $("#dummy").animate({
+      opacity: 0,
+      left: '-=10'
+    }, {
+      duration: 200,
+      easing: 'easeInSine',
+      complete: function(){
+        // after fading
+      }
+    });
+  });
 });

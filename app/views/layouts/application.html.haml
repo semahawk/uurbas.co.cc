@@ -3,13 +3,13 @@
   %head
     %title= yield(:title) + ' @ uurbas.co.cc'
     = stylesheet_link_tag 'base'
-    = javascript_include_tag 'mootools.min', 'application', 'rails'
+    = javascript_include_tag 'jquery.min', 'jquery.easing.1.3', 'application', 'rails'
     = csrf_meta_tag
     
     :javascript
-      window.addEvent("domready", function(){
-        $$('#wrap #content .entry .content a').set('target', '_blank');
-        $$('#wrap #content #conversation .comment a').set('target', '_blank');
+      $(document).ready(function(){
+        $('#wrap #content .entry .content a').attr('target', '_blank');
+        $('#wrap #content #conversation .comment a').attr('target', '_blank');
       });
     
     :javascript
