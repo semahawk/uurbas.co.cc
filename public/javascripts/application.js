@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+  // check if #alert is empty
+  if(!$("#alert").html()){
+    $("#alert").removeClass("alert");
+  } else {
+    $("#alert").addClass("alert");
+  }
+
+  // check if #notice is empty
+  if(!$("#notice").html()){
+    $("#notice").removeClass("notice");
+  } else {
+    $("#notice").addClass("notice");
+  }
+
   /// Share! ///
   $("#share img").mouseover(function(){
     $("#share_h").html($(this).attr("alt"));

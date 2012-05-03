@@ -22,13 +22,22 @@
       })();
   
   %body
+    #notice= notice
+    #alert= alert
     #wrap
       #content
         #header
           #header_left
             = breadcrumb :pretext => "", :separator => "»", :autoroot => true, :show_root_alone => true, :link_last => false
           #header_right
-            beacon
+            - if user_signed_in?
+              = current_user.email
+              \-
+              = link_to "sign out", destroy_user_session_path, :method => :delete
+            - else
+              = link_to "sign in", new_user_session_path
+              or
+              = link_to "sign up", new_user_registration_path
           .clear
 
         #master
