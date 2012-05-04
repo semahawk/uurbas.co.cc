@@ -6,3 +6,4 @@ log/*.log
 doc/
 
 config/initializers/secret_token.rb
+config/initializers/omniauth.rb
