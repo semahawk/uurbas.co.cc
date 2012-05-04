@@ -207,7 +207,7 @@ pre {
 }
 
   #header a { color: #F25F0F; }
-  #header a:hover { border-bottom: 1px dashed #e1ddda; }
+  #header a:hover { color: #f85f0f; border-bottom: 1px dashed #e1ddda; }
 
   #header_left {
     float: left;
@@ -318,6 +318,12 @@ pre {
 }
 
   .entry .info a { color: #777; }
+
+.read_more {
+  margin: 20px;
+  padding: 10px;
+  font-size: 24px;
+}
 
 #share {
   width: 50%;
