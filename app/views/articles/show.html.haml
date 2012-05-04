@@ -6,7 +6,7 @@
   .info
     = raw "Created at #{@article.created_at} under <a href='/tag/c'>c</a>, <a href='/tag/linux'>linux</a>"
   .content
-    = markdown @article.body
+    = preserve (markdown (@article.body))
 
 #share
   %h1#share_h Share

@@ -10,4 +10,4 @@
 		%br
 		= link_to 'Reply', new_article_comment_path(@article, :parent_id => comment)
 	%span
-		= markdown comment.body
+		= preserve (markdown (comment.body))

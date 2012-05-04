@@ -12,13 +12,31 @@ Gretel::Crumbs.layout do
     link "articles", articles_path
   end
 
-  crumb :article do |article|
-    link article.title, articles_path(article)
-    parent :articles
-  end
+    crumb :article do |article|
+      link article.title, articles_path(article)
+      parent :articles
+    end
+
+      crumb :article_edit do |article|
+        link "edit", articles_path(article)
+        parent :articles
+      end
+
+      crumb :article_create do |article|
+        link "new", articles_path(article)
+        parent :articles
+      end
 
   crumb :contact do
     link "contact", contact_path
+  end
+
+  crumb :sign_in do
+    link "sign in", sign_in_path
+  end
+
+  crumb :sign_up do
+    link "sign up", sign_up_path
   end
 
   # crumb :project do |project|

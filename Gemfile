@@ -15,3 +15,9 @@ gem 'nokogiri'
 gem 'ancestry'
 gem 'gretel'
 gem 'devise', '~> 1.5'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+gem 'omniauth-vimeo'
+gem 'nifty-generators', :group => :development
+gem "mocha", :group => :test

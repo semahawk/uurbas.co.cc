@@ -1,0 +1,25 @@
+- title "sign in services"
+
+- if @authentications
+  - unless @authentications.empty?
+    %h2 You can sign in to this account using:
+    %p
+      - for auth in @authentications
+        .auth
+          = image_tag "#{auth.provider}.png", :size => "32x32"
+          .provider= auth.provider.titleize
+          .uid= auth.uid
+          = link_to "X", auth, :confirm => "You sure?", :method => :delete, :class => "remove"
+      .clear
+  - else
+    %p
+      %strong Add another service to sign in with:
+
+%a.auth_provider{:href => '/auth/twitter'}
+  = image_tag "twitter.png", :size => "32x32", :alt => "Twitter"
+
+%a.auth_provider{:href => '/auth/github'}
+  = image_tag "github.png", :size => "32x32", :alt => "GitHub"
+
+%a.auth_provider{:href => '/auth/vimeo'}
+  = image_tag "vimeo.png", :size => "32x32", :alt => "Vimeo"

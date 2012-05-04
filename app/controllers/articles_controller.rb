@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
+    breadcrumb :article_create, @article
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +39,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    breadcrumb :article_edit, @article
   end
 
   # POST /articles
