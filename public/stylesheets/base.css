@@ -311,6 +311,11 @@ pre {
     text-align: center;
   }
 
+.entry {
+  padding-bottom: 30px;
+  border-bottom: 1px dashed #e1ddda;
+}
+
 .entry .info {
   font: 15px 'LinuxLibertineOItalic', Arial, sans-serif;
   color: #999;
@@ -350,7 +355,8 @@ pre {
 }
 
 #conversation {
-  
+  border-top: 1px dashed #e1ddda;
+  margin-top: 30px;
 }
 
   .comment {
