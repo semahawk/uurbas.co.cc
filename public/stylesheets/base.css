@@ -311,18 +311,18 @@ pre {
     text-align: center;
   }
 
-.entry {
+#entry {
   padding-bottom: 30px;
   border-bottom: 1px dashed #e1ddda;
 }
 
-.entry .info {
-  font: 15px 'LinuxLibertineOItalic', Arial, sans-serif;
-  color: #999;
-  margin: 20px;
-}
+  #entry .info {
+    font: 15px 'LinuxLibertineOItalic', Arial, sans-serif;
+    color: #999;
+    margin: 20px;
+  }
 
-  .entry .info a { color: #777; }
+  #entry .info a { color: #777; }
 
 .read_more {
   margin: 20px;
