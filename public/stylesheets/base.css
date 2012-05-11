@@ -193,8 +193,8 @@ pre {
 
   #content h1 a { color: #44402A; }
   #content h1 a:hover { color: #5F593A; }
-  #content a { color: #1A8BD2; }
-  #content a:hover { color: #50B1EE; }
+  /*#content a { color: #1A8BD2; }*/
+  /*#content a:hover { color: #50B1EE; }*/
 
 #header {
   padding: 10px 20px 20px 20px;
@@ -367,11 +367,11 @@ pre {
     padding: 20px;
   }
   
-  .comment span {
+  .comment .comment_content {
     font: 18px/22px 'LinuxLibertineOItalic', Arial, sans-serif;
   }
   
-  .comment div {
+  .comment .comment_head {
     color: #888;
     height: 30px;
     margin-top: 15px;
@@ -379,19 +379,35 @@ pre {
     font: 18px 'LinuxLibertineOItalic', Arial, sans-serif;
   }
   
-    .comment div a { color: #1C9EE0; }
-    .comment div a:hover { color: #31AFEF; }
+    .comment .comment_head a { color: #1C9EE0; }
+    .comment .comment_head a:hover { color: #31AFEF; }
   
   .comment img {
     float: left;
     margin-right: 10px;
     -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
     border: 5px solid #e1ddda;
   }
 
-    .comment span a { color: #1C9EE0; }
-    .comment span a:hover { color: #31AFEF; }
+    .comment .comment_content a { color: #1C9EE0; }
+    .comment .comment_content a:hover { color: #31AFEF; }
   
+  .comment .comment_links {
+    font-family: georgia;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    color: #666;
+    border-top: 1px dashed #e1ddda;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+    .comment .comment_links a { color: #1c9ee0; font-size: 18px; font-style: italic; }
+    .comment .comment_links a:hover { color: #f25f0f; }
+
   .nested_comment {
     padding-left: 40px;
     padding-right: -40px;
