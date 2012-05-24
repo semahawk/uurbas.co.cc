@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'yaml'
+require 'psych'
 
 YAML::ENGINE.yamler = 'psych'
 

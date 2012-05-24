@@ -21,3 +21,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-vimeo'
 gem 'nifty-generators', :group => :development
 gem "mocha", :group => :test
+gem 'psych'
